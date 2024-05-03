@@ -1,6 +1,91 @@
 {
     "packages": [
         {
+            "name": "askdkc/breezejp",
+            "version": "v1.8.2",
+            "version_normalized": "1.8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/askdkc/breezejp.git",
+                "reference": "952716fec289d9e80fbdae0309d6907a69612a53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/askdkc/breezejp/zipball/952716fec289d9e80fbdae0309d6907a69612a53",
+                "reference": "952716fec289d9e80fbdae0309d6907a69612a53",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0|^11.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0",
+                "laravel/pint": "^1.4",
+                "nunomaduro/collision": "^6.0|^7.0|^8.0",
+                "orchestra/testbench": "^7.7|^8.0|^9.0",
+                "pestphp/pest": "^1.22|^2.0|^3.0",
+                "phpstan/extension-installer": "^1.2",
+                "phpunit/phpunit": "^9.5.27|^10.0|^11.0"
+            },
+            "time": "2024-04-17T22:40:12+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Askdkc\\Breezejp\\BreezejpServiceProvider"
+                    ],
+                    "aliases": {
+                        "Breezejp": "Askdkc\\Breezejp\\Facades\\Breezejp"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Askdkc\\Breezejp\\": "src",
+                    "Askdkc\\Breezejp\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "askdkc",
+                    "email": "askdkc@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Breeze(とLaravel UIとJetstream)を標準の各種バリデーションや言語設定、タイムスタンプも含めて一瞬で日本語化対応＆言語切替機能も追加 / This package provides Japanese translation for Laravel Breeze, Laravel UI and Jetstream package with language switching feature. It also privides Japanese validation messages",
+            "homepage": "https://github.com/askdkc/breezejp",
+            "keywords": [
+                "breeze",
+                "japanese",
+                "jetstream",
+                "laravel",
+                "laravel ui",
+                "translation"
+            ],
+            "support": {
+                "issues": "https://github.com/askdkc/breezejp/issues",
+                "source": "https://github.com/askdkc/breezejp/tree/v1.8.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/askdkc",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/askdkc",
+                    "type": "ko_fi"
+                }
+            ],
+            "install-path": "../askdkc/breezejp"
+        },
+        {
             "name": "brick/math",
             "version": "0.11.0",
             "version_normalized": "0.11.0.0",
@@ -1198,6 +1283,71 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "install-path": "../hamcrest/hamcrest-php"
+        },
+        {
+            "name": "laravel/breeze",
+            "version": "v1.29.1",
+            "version_normalized": "1.29.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "22c53b84b7fff91b01a318d71a10dfc251e92849"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/22c53b84b7fff91b01a318d71a10dfc251e92849",
+                "reference": "22c53b84b7fff91b01a318d71a10dfc251e92849",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.17",
+                "illuminate/filesystem": "^10.17",
+                "illuminate/support": "^10.17",
+                "illuminate/validation": "^10.17",
+                "php": "^8.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0",
+                "phpstan/phpstan": "^1.10"
+            },
+            "time": "2024-03-04T14:35:21+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "install-path": "../laravel/breeze"
         },
         {
             "name": "laravel/framework",
@@ -5646,6 +5796,69 @@
             "install-path": "../spatie/laravel-ignition"
         },
         {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.16.4",
+            "version_normalized": "1.16.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "ddf678e78d7f8b17e5cdd99c0c3413a4a6592e53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/ddf678e78d7f8b17e5cdd99c0c3413a4a6592e53",
+                "reference": "ddf678e78d7f8b17e5cdd99c0c3413a4a6592e53",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5.24",
+                "spatie/pest-plugin-test-time": "^1.1"
+            },
+            "time": "2024-03-20T07:29:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../spatie/laravel-package-tools"
+        },
+        {
             "name": "symfony/console",
             "version": "v6.3.4",
             "version_normalized": "6.3.4.0",
@@ -8392,9 +8605,11 @@
     ],
     "dev": true,
     "dev-package-names": [
+        "askdkc/breezejp",
         "fakerphp/faker",
         "filp/whoops",
         "hamcrest/hamcrest-php",
+        "laravel/breeze",
         "laravel/pint",
         "laravel/sail",
         "mockery/mockery",
@@ -8427,6 +8642,7 @@
         "spatie/flare-client-php",
         "spatie/ignition",
         "spatie/laravel-ignition",
+        "spatie/laravel-package-tools",
         "symfony/yaml",
         "theseer/tokenizer"
     ]
