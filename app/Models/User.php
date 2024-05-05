@@ -43,7 +43,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function learningData()
+    public function learningLogs()
     {
         return $this->hasMany(LearningLog::class);
     }

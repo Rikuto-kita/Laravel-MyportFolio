@@ -9,6 +9,6 @@
 </a>
 
 <h2>学習チャート</h2>
-<a>
+<a href="{{ route('learninglog.edit')}}">
   <button>編集する</button>
 </a>

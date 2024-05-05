@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LearningLogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/learninglog/edit', [LearningLogController::class, 'edit'])->name('learninglog.edit');
+    Route::patch('/learninglog', [LearningLogController::class, 'update'])->name('learninglog.update');
 });
+
+
+
 
 require __DIR__.'/auth.php';
