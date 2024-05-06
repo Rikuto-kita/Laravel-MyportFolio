@@ -18,7 +18,10 @@
 
 <div class="category">
   <h2>バックエンド</h2>
-  <button>項目を追加する</button>
+  <a href="{{ route('learninglog.create', ['selected_month' => $selectedMonth, 'category_id' => 1])}}">
+    <button>項目を追加する</button>
+  </a>
+  
   <div class="category-items">
       @foreach($backend as $log)
           <div class="category-item">
@@ -35,7 +38,6 @@
                 @method('DELETE')
                 <button>削除する</button>
               </form>
-
           </div>
       @endforeach
   </div>
@@ -46,12 +48,21 @@
   <button>項目を追加する</button>
   <div class="category-items">
       @foreach($frontend as $log)
-          <div class="category-item">
-              {{ $log->contents_name }}
-              <input type="number" value="{{ $log->learning_time }}">
-              <button>学習時間を更新する</button>
-              <button>削除する</button>
-          </div>
+        <div class="category-item">
+          {{ $log->contents_name }}
+          <form action="{{ route('learninglog.update', $log->id) }}" method="POST">
+            @csrf
+            @method('PATCH')
+              <input type="number" name="learning_time"  value="{{$log->learning_time }}" >
+              <button>学習時間を保存する</button>
+          </form>
+
+          <form action="{{ route('learninglog.delete', $log->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button>削除する</button>
+          </form>
+        </div>
       @endforeach
   </div>
 </div>
@@ -61,12 +72,21 @@
   <button>項目を追加する</button>
   <div class="category-items">
       @foreach($infra as $log)
-          <div class="category-item">
-              {{ $log->contents_name }}
-              <input type="number" value="{{ $log->learning_time }}">
-              <button>学習時間を更新する</button>
-              <button>削除する</button>
-          </div>
+        <div class="category-item">
+          {{ $log->contents_name }}
+          <form action="{{ route('learninglog.update', $log->id) }}" method="POST">
+            @csrf
+            @method('PATCH')
+              <input type="number" name="learning_time"  value="{{$log->learning_time }}" >
+              <button>学習時間を保存する</button>
+          </form>
+
+          <form action="{{ route('learninglog.delete', $log->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button>削除する</button>
+          </form>
+        </div>
       @endforeach
   </div>
 </div>

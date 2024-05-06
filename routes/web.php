@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/learninglog/edit', [LearningLogController::class, 'edit'])->name('learninglog.edit');
     Route::patch('/learninglog/{id}', [LearningLogController::class, 'update'])->name('learninglog.update');
     Route::delete('/learninglog/{id}', [LearningLogController::class, 'delete'])->name('learninglog.delete');
+    Route::get('/learninglog/create/{category_id}', [LearningLogController::class, 'create'])->name('learninglog.create');
+    Route::post('/learninglog/store', [LearningLogController::class, 'store'])->name('learninglog.store');
 });
 
 require __DIR__.'/auth.php';

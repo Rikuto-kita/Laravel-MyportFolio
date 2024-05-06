@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\LearningLog;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -59,6 +60,34 @@ class LearningLogController extends Controller
         }
     }
 
-    
+    public function create($category_id, Request $request): view 
+    {
+        $selectedMonth = $request->input('selected_month', Carbon::now()->format('Y-m'));
+        $category= Category::find($category_id);
+
+        return view('learninglog.create', ['selectedMonth'=>$selectedMonth, 'category'=> $category]);
+    }
+
+    public function store(Request $request){
+        $categoryName = Category::find($request->input('category_id'))->name;
+
+        $learningLog = new LearningLog;
+        $learningLog->user_id = auth()->id();
+        $learningLog->category_id = $request->input('category_id');
+        $learningLog->contents_name = $request->input('contents_name');
+        $learningLog->learning_time = $request->input('learning_time');
+        $learningLog->created_at = $request->input('selectedMonth');
+        $learningLog->updated_at = $request->input('selectedMonth');
+        // $learningLog ->save();
+        
+        if($learningLog ->save()){
+            return back()->with('success', "{$categoryName}に{$learningLog->contents_name}を{$learningLog->learning_time}分で追加しました");
+        }
+       
+
+        // return redirect()->route('learninglog.edit');
+    }
+
+
 
 }
