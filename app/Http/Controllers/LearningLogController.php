@@ -33,11 +33,32 @@ class LearningLogController extends Controller
         $backend = $learningLogs->where('category_id', 1)
                                 ->whereBetween('created_at', [$startOfMonth, $endOfMonth]);
         $frontend = $learningLogs->where('category_id', 2)
-                                  ->whereBetween('created_at', [$startOfMonth, $endOfMonth]);
+                                ->whereBetween('created_at', [$startOfMonth, $endOfMonth]);
         $infra = $learningLogs->where('category_id', 3)
-                              ->whereBetween('created_at', [$startOfMonth, $endOfMonth]);
+                                ->whereBetween('created_at', [$startOfMonth, $endOfMonth]);
 
         return view('learninglog.edit', compact( 'backend','frontend','infra','learningLogs','months', 'selectedMonth'));
     }
+
+    public function update(Request $request, $id){
+        $learningLog = LearningLog::find($id);
+        
+        if($learningLog){
+            $learningLog->learning_time = $request->learning_time;
+            $learningLog->save();
+            return back()->with('success', "{$learningLog->contents_name}の学習時間を保存しました");
+        }
+    }
+
+    public function delete(Request $request, $id){
+        $learningLog = LearningLog::find($id);
+
+        if($learningLog){
+            $learningLog->delete();
+            return back()->with('success',  "{$learningLog->contents_name}を削除しました");
+        }
+    }
+
+    
 
 }

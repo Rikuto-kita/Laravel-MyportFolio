@@ -27,10 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/learninglog/edit', [LearningLogController::class, 'edit'])->name('learninglog.edit');
-    Route::patch('/learninglog', [LearningLogController::class, 'update'])->name('learninglog.update');
+    Route::patch('/learninglog/{id}', [LearningLogController::class, 'update'])->name('learninglog.update');
+    Route::delete('/learninglog/{id}', [LearningLogController::class, 'delete'])->name('learninglog.delete');
 });
-
-
-
 
 require __DIR__.'/auth.php';
